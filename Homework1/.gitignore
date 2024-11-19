@@ -1,0 +1,23 @@
+# Ignore Binaries and Intermediate folders for the main project
+/FPS_Android/Binaries/
+/FPS_Android/Intermediate/
+
+# Ignore Binaries and Intermediate folders in all Plugin subdirectories
+/FPS_Android/Plugins/*/Binaries/
+/FPS_Android/Plugins/*/Intermediate/
+/FPS_Android/Plugins/SuperManager/Binaries/
+/FPS_Android/Plugins/SuperManager/Intermediate/
+
+# Ignore other common UE4/UE5 build files
+/FPS_Android/Saved/
+/FPS_Android/DerivedDataCache/
+/FPS_Android/.vs/
+/FPS_Android/Build/
+
+# Ignore user-specific files
+/FPS_Android/*.sln
+/FPS_Android/*.suo
+/FPS_Android/*.vcxproj
+/FPS_Android/*.vcxproj.filters
+/FPS_Android/*.user
+/FPS_Android/*.log
