@@ -67,5 +67,17 @@ public:
 	/** Returns FirstPersonCameraComponent subobject **/
 	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
 
+public:
+	// 玩家积分
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Score")
+	int32 PlayerScore = 0;
+
+	// 增加积分的方法
+	void AddScore(int32 Points);
+
+	// Getter for Score
+	UFUNCTION(BlueprintCallable, Category = "Score")
+	int32 GetScore() const;
+
 };
 

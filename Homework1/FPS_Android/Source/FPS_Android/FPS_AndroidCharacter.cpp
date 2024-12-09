@@ -67,6 +67,25 @@ void AFPS_AndroidCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 	}
 }
 
+void AFPS_AndroidCharacter::AddScore(int32 Points)
+{
+	PlayerScore += Points;
+
+	// 打印积分日志，用于调试
+	UE_LOG(LogTemplateCharacter, Log, TEXT("Score Updated: %d"), PlayerScore);
+	// 打印到屏幕
+	if (GEngine)
+	{
+		FString ScoreMessage = FString::Printf(TEXT("Score: %d"), PlayerScore);
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, ScoreMessage);
+	}
+}
+
+int32 AFPS_AndroidCharacter::GetScore() const
+{
+	return this->PlayerScore;
+}
+
 
 void AFPS_AndroidCharacter::Move(const FInputActionValue& Value)
 {

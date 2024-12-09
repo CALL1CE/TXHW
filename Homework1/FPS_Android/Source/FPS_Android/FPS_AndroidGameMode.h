@@ -13,6 +13,20 @@ class AFPS_AndroidGameMode : public AGameModeBase
 
 public:
 	AFPS_AndroidGameMode();
+protected:
+	// Called when the game starts
+	virtual void BeginPlay() override;
+
+private:
+	// Duration of the game in seconds
+	UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
+	float GameDuration;
+
+	// Function to handle game ending
+	void EndGame();
+
+private:
+	FTimerHandle GameTimerHandle; // ¼ÆÊ±Æ÷¾ä±ú
 };
 
 

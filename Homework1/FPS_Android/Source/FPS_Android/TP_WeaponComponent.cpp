@@ -42,7 +42,8 @@ void UTP_WeaponComponent::Fire()
 			//Set Spawn Collision Handling Override
 			FActorSpawnParameters ActorSpawnParams;
 			ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
-	
+			ActorSpawnParams.Owner = Character; // 设置射弹的所有者为当前的角色
+
 			// Spawn the projectile at the muzzle
 			World->SpawnActor<AFPS_AndroidProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
 		}
